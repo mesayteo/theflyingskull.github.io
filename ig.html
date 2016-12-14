@@ -50,7 +50,8 @@
 			  dataType: 'jsonp',
 			  data: access_token=access_token,
 			  success: function(data){
-			  	return console.log(data);
+			  	$('username').html(data.username);
+			  	console.log(data);
 			  },
 			  complete: function(data){
 			  	console.log(data);
