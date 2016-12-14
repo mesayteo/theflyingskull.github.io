@@ -77,10 +77,11 @@
         		console.log('the on success funciton is working sort of ')
         		console.log(response.data.username)
         		$('.username').html(response.data.username)
-        		user_id = response.data.id
-        		recent_media = `https://api.instagram.com/v1/users/${user_id}/`
+        		// user_id = response.data.id
+        		// recent_media = `https://api.instagram.com/v1/users/${user_id}/media/recent`
+        		recent_media = 'https://api.instagram.com/v1/users/self/media/recent'
         		jax(recent_media, access_token, recentMediaCallback)
-        		
+
         	}
 
         	// get all recent media
