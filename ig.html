@@ -81,10 +81,16 @@
         	// get all recent media
 
         	function recentMediaCallback (response){
-        		for (let value of response){
-        			media.push(value.data.id)
+        		for (var prop in response) {
+        		    if (!response.hasOwnProperty(prop)) {
+        		        //The current property is not a direct property of p
+        		        continue;
+        		    }
+        		    //Do your logic with the property here
+        		    media.push(prop)
         		}
         		console.log(media)
+        		console.log(response)
         	}
 
         	// start application
