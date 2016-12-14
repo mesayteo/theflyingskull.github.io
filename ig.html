@@ -87,7 +87,7 @@
         	// get all recent media
 
         	function recentMediaCallback (response){
-        		for (var object in response.data) {
+        		for (let object of response.data) {
         		    // if (!response.hasOwnProperty(prop)) {
         		    //     //The current property is not a direct property of p
         		    //     continue;
