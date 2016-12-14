@@ -44,14 +44,17 @@
         <script>
         	var access_token = window.location.hash.substr(1);
         	var url = "https://api.instagram.com/v1/users/self/";
-
+        	var on_success = function (data){
+        		$('.username').html(data.responseJSON.username);
+        	}
         	var info = $.ajax({
 			  url: url,
 			  dataType: 'jsonp',
 			  data: access_token=access_token,
 			  success: function(data){
-			  	$('#username').html('poop');
+			  	$('.username').html('poop');
 			  	console.log(data);
+			  	on_success(data);
 			  },
 			  complete: function(data){
 			  	console.log(data);
