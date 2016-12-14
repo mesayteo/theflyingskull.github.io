@@ -57,7 +57,7 @@
 	        	$.ajax({
 				  url: url,
 				  dataType: 'jsonp',
-				  data: access_token=access_token,
+				  data: access_token = access_token,
 				  success: function(response){
 				  	callback(response)
 				  },
@@ -79,7 +79,8 @@
         		$('.username').html(response.data.username)
         		user_id = response.data.id
         		recent_media = `https://api.instagram.com/v1/users/${user_id}/`
-
+        		jax(recent_media, access_token, recentMediaCallback)
+        		
         	}
 
         	// get all recent media
@@ -101,7 +102,7 @@
 
         
 			jax(user_info, access_token, initialize) 
-			jax(recent_media, access_token, recentMediaCallback)
+			
 			
 
 
