@@ -44,9 +44,9 @@
         <script>
         	var access_token = window.location.hash.substr(1);
         	var url = "https://api.instagram.com/v1/users/self/";
-        	function on_success (data){
+        	function on_success (response){
         		console.log('the on success funciton is working sort of ');
-        		console.log(data);
+        		console.log(response.data.responesJSON.username);
         		// $('.username').html(data.responseJSON.username);
 
 
