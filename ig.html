@@ -47,19 +47,21 @@
         	var on_success = function (data){
         		$('.username').html(data.responseJSON.username);
         	}
-        	var info = $.ajax({
-			  url: url,
-			  dataType: 'jsonp',
-			  data: access_token=access_token,
-			  success: function(data){
-			  	$('.username').html('poop');
-			  	console.log(data);
-			  	on_success(data);
-			  },
-			  complete: function(data){
-			  	console.log(data);
-			  }
-			});
+        	function info(on_success){
+	        	$.ajax({
+				  url: url,
+				  dataType: 'jsonp',
+				  data: access_token=access_token,
+				  success: function(response){
+				  	$('.username').html('poop');
+				  	console.log(data);
+				  	on_success(response);
+				  },
+				  complete: function(data){
+				  	console.log(data);
+				  }
+				});
+        	}
 
 			info(); 
         </script>
