@@ -45,7 +45,9 @@
         	var access_token = window.location.hash.substr(1);
         	var url = "https://api.instagram.com/v1/users/self/";
         	var on_success = function (data){
+        		console.log('the on success funciton is working sort of ');
         		$('.username').html(data.responseJSON.username);
+
         	}
         	function info(on_success){
 	        	$.ajax({
@@ -53,8 +55,8 @@
 				  dataType: 'jsonp',
 				  data: access_token=access_token,
 				  success: function(response){
-				  	$('.username').html('poop');
-				  	console.log(data);
+				  	// $('.username').html('poop');
+				  	console.log(response);
 				  	on_success(response);
 				  },
 				  complete: function(data){
