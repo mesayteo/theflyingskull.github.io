@@ -47,7 +47,7 @@
 
         	var info = $.ajax({
 			  url: url,
-			  crossDomain: true,
+			  dataType: jsonp,
 			  data: access_token=access_token,
 			  success: function(data){
 			  	return console.log(data);
