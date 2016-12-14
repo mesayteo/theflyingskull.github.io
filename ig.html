@@ -42,8 +42,8 @@
         <script src="custom.js"></script>
 
         <script>
-        	var access_token = window.location.hash.substr(14);
-        	var url = "https://api.instagram.com/v1/users/self/";
+        	var access_token = window.location.hash.substr(1);
+        	var url = "https://api.instagram.com/v1/users/self/?";
 
         	var info = $.ajax({
 			  url: url,
