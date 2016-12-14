@@ -44,11 +44,11 @@
         <script>
         	var access_token = window.location.hash.substr(1);
         	var url = "https://api.instagram.com/v1/users/self/";
-        	var on_success = function (data){
+        	function on_success (data){
         		console.log('the on success funciton is working sort of ');
         		$('.username').html(data.responseJSON.username);
 
-        	}
+        	};
         	function info(on_success){
 	        	$.ajax({
 				  url: url,
@@ -63,7 +63,7 @@
 				  	console.log(data);
 				  }
 				});
-        	}
+        	};
 
 			info(); 
         </script>
