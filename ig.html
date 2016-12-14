@@ -46,7 +46,9 @@
         	var url = "https://api.instagram.com/v1/users/self/";
         	function on_success (data){
         		console.log('the on success funciton is working sort of ');
-        		$('.username').html(data.responseJSON.username);
+        		console.log(data);
+        		// $('.username').html(data.responseJSON.username);
+
 
         	};
         	function jax(callback){
