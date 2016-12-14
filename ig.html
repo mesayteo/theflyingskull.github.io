@@ -49,7 +49,7 @@
         		$('.username').html(data.responseJSON.username);
 
         	};
-        	function info(on_success){
+        	function jax(callback){
 	        	$.ajax({
 				  url: url,
 				  dataType: 'jsonp',
@@ -57,7 +57,7 @@
 				  success: function(response){
 				  	// $('.username').html('poop');
 				  	console.log(response);
-				  	on_success(response);
+				  	callback(response);
 				  },
 				  complete: function(data){
 				  	console.log(data);
@@ -65,7 +65,7 @@
 				});
         	};
 
-			info(); 
+			jax(on_success); 
         </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
