@@ -107,7 +107,7 @@
         	// get all comments of a media object
 
         	function getAllComments(media_id){
-        		jax(url=`https://api.instagram.com/v1/media/${media_id}/comments`, access_token, storeCommenters)
+        		jax(url=`https://api.instagram.com/v1/media/${media_id}/comments`, access_token, getLikes)
 
         	}
 
@@ -129,6 +129,10 @@
         			}
         		}
         		// console.log('store commenters is being called')
+        	}
+
+        	function getLikes(response){
+        		console.log('this is the likes response', response)
         	}
 
         	// start application
