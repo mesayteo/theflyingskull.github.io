@@ -43,9 +43,10 @@
 
         <script>
         	var access_token = window.location.hash.substr(1)
-        	var commenters = {}
+        	var commenters = new Map()
         	var media = []
         	var recent_media
+        	var top commenters
         	var user_id
         	var user_info = "https://api.instagram.com/v1/users/self/"
 
@@ -93,10 +94,36 @@
         		    //     continue;
         		    // }
         		    //Do your logic with the property here
-        		    media.push(object.id)
+
+        		    // media.push(object.id)
+        		    // 
+        		    getAllComments(object.id)
         		}
-        		console.log(media)
+        		// console.log(media)
         		console.log(response)
+
+        	}
+
+        	// get all comments of a media object
+
+        	function getAllComments(media_id){
+        		jax(url=`https://api.instagram.com/v1/media/${media_id}/comments`, access_token, storeCommenters)
+        	}
+
+        	// get all commenters to recent media add them to commenters map, counting their comments
+
+        	function storeCommenters(response){
+        		for (let object of response.data) {
+        			if (commenters.has(object.from.id)){
+        				// increase comment count value
+        				commenters.set(object.from.id, commenters.get(object.from.id + 1))
+        			} else {
+        				// add commenter id 
+        				// set comment count value to 1
+        				commenters.set(object.from.id, 1)
+        			}
+        		}
+        		console.log('store commenters is being called')
         	}
 
         	// start application
