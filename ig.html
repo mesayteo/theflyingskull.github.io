@@ -100,7 +100,7 @@
         		    getAllComments(object.id)
         		}
         		// console.log(media)
-        		console.log(response)
+        		// console.log(response)
 
         	}
 
@@ -114,13 +114,13 @@
 
         	function storeCommenters(response){
         		for (let object of response.data) {
-        			if (commenters.has(object.from.id)){
+        			if (commenters.has(object.from.username)){
         				// increase comment count value
-        				commenters.set(object.from.id, commenters.get(object.from.id + 1))
+        				commenters.set(object.from.username, commenters.get(object.from.username + 1))
         			} else {
-        				// add commenter id 
+        				// add commenter username 
         				// set comment count value to 1
-        				commenters.set(object.from.id, 1)
+        				commenters.set(object.from.username, 1)
         			}
         		}
         		console.log('store commenters is being called')
