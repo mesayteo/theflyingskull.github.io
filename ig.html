@@ -67,7 +67,7 @@
 				  	console.log(response)
 				  },
 				  complete: function(response){
-					console.log(response)
+					// console.log(response)
 				  }
 				})
         	}
@@ -75,8 +75,8 @@
         	// get basic user info 
         	
         	function initialize(response){
-        		console.log('the on success funciton is working sort of ')
-        		console.log(response.data.username)
+        		// console.log('the on success funciton is working sort of ')
+        		// console.log(response.data.username)
         		$('.username').html(response.data.username)
         		// user_id = response.data.id
         		// recent_media = `https://api.instagram.com/v1/users/${user_id}/media/recent`
@@ -108,12 +108,16 @@
 
         	function getAllComments(media_id){
         		jax(url=`https://api.instagram.com/v1/media/${media_id}/comments`, access_token, storeCommenters)
+
         	}
 
         	// get all commenters to recent media add them to commenters map, counting their comments
 
         	function storeCommenters(response){
+        		console.log('this is the store commenters response', response)
         		for (let object of response.data) {
+        			
+        			if (object.from.username != 'mesayteo'){
 	        			if (commenters.has(object.from.username)){
 	        				// increase comment count value
 	        				commenters.set(object.from.username, commenters.get(object.from.username) + 1)
@@ -122,8 +126,9 @@
 	        				// set comment count value to 1
 	        				commenters.set(object.from.username, 1)
 	        			}
+        			}
         		}
-        		console.log('store commenters is being called')
+        		// console.log('store commenters is being called')
         	}
 
         	// start application
