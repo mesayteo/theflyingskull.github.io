@@ -139,7 +139,7 @@
         		console.log('this is the store commenters response', response)
         		for (let object of response.data) {
         			
-        			if (object.from.username != 'mesayteo'){
+        			// if (object.from.username != 'mesayteo'){
 	        			if (commenters.has(object.from.username)){
 	        				// increase comment count value
 	        				commenters.set(object.from.username, commenters.get(object.from.username) + 1)
@@ -148,7 +148,7 @@
 	        				// set comment count value to 1
 	        				commenters.set(object.from.username, 1)
 	        			}
-        			}
+        			// }
         		}
         		// console.log('store commenters is being called')
         	}
