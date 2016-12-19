@@ -28,7 +28,7 @@
 			<div class="ui center aligned segment">
 				<div class="ui card">
 				  <div class="image">
-				    <img class="profile_photo" src="">
+				    <img class="profile_picture" src="">
 				  </div>
 				  <div class="content">
 				    <a class="header username"></a>
@@ -97,7 +97,7 @@
         		// console.log(response.data.username)
         		$('.username').html(response.data.username)
         		$('.bio').html(response.data.bio)
-        		$('.profile_photo').attr("src", response.data.profile_photo)
+        		$('.profile_picture').attr("src", response.data.profile_picture)
         		// user_id = response.data.id
         		// recent_media = `https://api.instagram.com/v1/users/${user_id}/media/recent`
         		recent_media = 'https://api.instagram.com/v1/users/self/media/recent'
